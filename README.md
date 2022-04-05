@@ -37,6 +37,25 @@ In the next menu you can optionally set the import setting for the raw dataset. 
 To import a DICOM dataset, click "Volume Rendering" and "Load DICOM" and select the folder containing your DICOM files.
 The dataset must be of 3D nature, and contain several files - each being a slice along the Z axis.
 
+**NifTI (UNDER CONSTRUCTION):**
+
+This fork is meant for prototyping only. Please do not use the importer for regular work.
+
+To import a Nifti dataset, click "HoloDVR" and "Nifti Dataset Importer". 
+* Click "Select File" to choose a Nifti-File
+* Click "Load Nifti Data" to import the texture data from the Nifti-File.
+After successfully loading the data, width, height and depth should be displayed.
+* Choosing a shader, creating a game object and attach to game object are optional and should not be used for now!
+* Click "Create 3D Texture" to finish the import. The created texture will be located under Ressources => VolumeTextures
+* To display the texture, create a GameObject with the "DirectVolumeRenderingMaterial" located under Materials.
+  Select the created texture for "Data Texture".
+* Truncating the Volume Texture is still work in progress
+
+####Nifti Import Limitations
+* The Import is currently limited to properly load one datatype (512). Other datatypes will cause the texture to be
+  messed up.
+* The file size of the texture data maybe wasteful as scalar values are mapped to rgb color data.
+
 **2. Moving the model**
 
 You can move the model like any other GameObject. Simply select it in the scene view or scene hierarchy, and move/rotate it like normal.
